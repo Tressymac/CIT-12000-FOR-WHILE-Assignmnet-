@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <h2>Hoosier Lottery numbers!</h2>
+        <h3 class="userGuess"></h3>
+        <p class="response"><em></em></p>
+
+    </div>
+
+
+    <script>
+
+        let displayResponse = document.querySelector(".userGuess");
+        let guessedresponse = document.querySelector(".response");
+            displayResponse.textContent = "Can you guess the correct Hoosier Lottery numbers?";
+
+                let randomNum = Math.floor(Math.random() * 49 ) + 1;     
+                console.log(randomNum)  
+
+                    let count = 6;
+                        while (count > 0) 
+                        {     
+                            count--;
+
+                                guess = prompt("Give me a number between 1 and 49, you have six tries. Here is a hint, the answer is " + randomNum);
+                                guess = parseInt(guess);
+            
+                                    if ((isNaN(guess))) {
+                                        alert("You have to use numbers only")
+                        }
+                                    else if (guess == randomNum) {    
+                                        alert("CORRECT!")
+                                            break             
+                        }
+                                    else if (guess < randomNum) {                 
+                                        alert("Your number was too low, please try again!");
+                        } 
+                                    else if (guess > randomNum) {  
+                                        alert("Your number was too high, please try again!");
+                        } 
+                                    else { 
+                            
+                        }   
+
+
+                        }
+
+            guessedresponse.textContent = "You guessed  " + guess;
+    
+    </script>
+</body>
+</html>
